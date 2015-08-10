@@ -3,8 +3,8 @@ var app = angular.module('shoppingCart', [
     'cart',
     'checkout'
 ]);
-app.config(['$routeProvider', function($routeProvider) {
+app.config(function($routeProvider) {
     $routeProvider.otherwise({
         redirectTo: '/cart'
     });
-}]);
+});

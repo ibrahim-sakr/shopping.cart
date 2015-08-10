@@ -1,61 +1,12 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-7 col-md-8 col-sm-8 col-lg-8">
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Item 1</h3>
-                </div>
-                <div class="panel-body">
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="optradio1">Option 1</label>
+            <div class="col-xs-7 col-md-8 col-sm-8 col-lg-8">
+                <div class="panel panel-primary" ng-repeat="item in items">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">{{item.name}}</h3>
                     </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="optradio1">Option 1</label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="optradio1">Option 1</label>
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Item 2</h3>
-                </div>
-                <div class="panel-body">
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="optradio2">Option 1</label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="optradio2">Option 1</label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="optradio2">Option 1</label>
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-primary">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Item 3</h3>
-                </div>
-                <div class="panel-body">
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="optradio3">Option 1</label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="optradio3">Option 1</label>
-                    </div>
-                    <div class="radio">
-                        <label>
-                            <input type="radio" name="optradio3">Option 1</label>
-                    </div>
+                    <check-list name="item.id" selected="item.selected" option="item.prices"></check-list>
                 </div>
             </div>
         </div>
@@ -66,7 +17,7 @@
                      <h3 class="panel-title">Total</h3>
                  </div>
                  <div class="panel-body">
-                     <h2>Rs. 100</h2>
+                     <h2>Rs. {{total()}}</h2>
                  </div>
              </div>
               
