@@ -1,0 +1,20 @@
+{
+  "name": "Shopping Cart",
+  "version": "1.0.0",
+  "homepage": "https://github.com/ibrahimsaqr/shopping.cart",
+  "description": "a simle shopping cart powered by angularJS",
+  "authors": [
+    "Ibrahim Saqr <ebrahimes@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "bootstrap": "~3.3.5"
+  }
+}
