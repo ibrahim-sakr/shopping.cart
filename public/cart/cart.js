@@ -4,16 +4,28 @@ var cart = angular.module('cart', ['ngRoute']);
 
 cart.config(function($routeProvider) {
     $routeProvider.when('/cart', {
-        templateUrl: 'cart/cart.html',
+        templateUrl: 'public/cart/cart.html',
         controller: 'CartCtrl'
     });
 });
-cart.controller('CartCtrl', function($scope) {
+
+cart.service('CommonProp', function() {
+    var Items = '', Total = 0;
+    return {
+        getItems:   function() { return Items; },
+        setItem:    function(value) { Items = value; },
+        getTotal:   function(){ return Total; },
+        setTotal:   function(value){ Total = value; }
+    };
+});
+
+cart.controller('CartCtrl', function($scope, CommonProp) {
     $scope.total = function() {
         var t = 0;
         for (var k in $scope.items) {
             t += parseInt($scope.items[k].selected);
         }
+        CommonProp.setTotal(t);
         return t;
     };
     $scope.items = [{
@@ -84,7 +96,13 @@ cart.controller('CartCtrl', function($scope) {
         }]
     }];
 
+    $scope.$watch('items',function(){
+        CommonProp.setItem($scope.items);
+    });
 
+    if (CommonProp.getItems() != '') {
+        $scope.items = CommonProp.getItems();
+    }
 });
 
 cart.directive('checkList', function() {
@@ -101,6 +119,20 @@ cart.directive('checkList', function() {
                            <label><input type="radio" ng-model="$parent.selected" ng-value="{{i.price}}" name="{{name}}">{{i.size}} Rs.{{i.price}}</label>\
                        </div>\
                     </div>';
+        }
+    };
+});
+
+cart.directive('getScroll', function($window) {
+    return {
+        scope: {
+            scroll: '=scroll'
+        },
+        link: function(scope, element, attrs) {
+            var scrollwindow = angular.element($window);
+            scrollwindow.on('scroll', scope.$apply.bind(scope, function() {
+                scope.scroll = scrollwindow.scrollTop();
+            }));
         }
     };
 })
