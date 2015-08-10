@@ -1,0 +1,22 @@
+{
+  "name": "shopping.cart",
+  "version": "1.0.0",
+  "description": "a simple shopping cart powered by angularJS and NODEJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ibrahimsaqr/shopping.cart.git"
+  },
+  "author": "Ibrahim Saqr <ebrahimes@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ibrahimsaqr/shopping.cart/issues"
+  },
+  "homepage": "https://github.com/ibrahimsaqr/shopping.cart#readme",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}

@@ -1,6 +1,7 @@
 var app = angular.module('shoppingCart', [
     'ngRoute',
-    'cart'
+    'cart',
+    'checkout'
 ]);
 app.config(['$routeProvider', function($routeProvider) {
     $routeProvider.otherwise({
